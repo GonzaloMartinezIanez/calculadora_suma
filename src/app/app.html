@@ -1,0 +1,20 @@
+<main class="content">
+  <h1>Calculadora usando Angular</h1>
+
+  <div class="calculadora">
+    <img src="base_calculadora.png" alt="Calculadora" width="600">
+      <div class="interfaz">
+        <strong class="resultado">{{printActual()}}</strong>
+        <div class="botones">
+          @for (numero of numeros; track numero) {
+            <button (click)="agregarNumero(numero.toString())" class="boton boton-numero">{{numero}}</button>
+          }
+          <button (click)="botonSumar()" class="boton boton-funcion">+</button>
+          <button (click)="botonIgual()" class="boton boton-funcion">=</button>
+          <button (click)="limpiar()" class="boton boton-funcion">C</button>
+        </div>
+      </div>
+      <button class="alternar-modo" (click)="alternarModo()">{{textoAlternar}}</button>
+  </div>
+  
+</main>
